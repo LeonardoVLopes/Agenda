@@ -1,7 +1,14 @@
 <?php
 
     include_once 'config/url.php';
+    include_once 'config/process.php';
 
+    // limpa a mensagem
+    if (isset($_SESSION['msg'])) {
+        $printMsg = $_SESSION['msg'];
+        $_SESSION['msg'] = '';
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +34,7 @@
             <div>
                 <div class="navbar-nav">
                     <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Agenda</a>
-                    <a class="nav-link active" id="sobre-link" href="<?= $BASE_URL ?>sobre.php">Sobre</a>
+                    <a class="nav-link active" id="sobre-link" href="<?= $BASE_URL ?>create.php">Adicionar Contato</a>
                     <a class="nav-link active" id="contato-link" href="<?= $BASE_URL ?>contato.php">Contato</a>
                 </div>
             </div>
